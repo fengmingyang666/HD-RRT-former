@@ -1,5 +1,4 @@
 data/*
-ckpt/*
 res/*
 wandb
 .history

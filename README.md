@@ -1,5 +1,4 @@
 # HD-RRT-former
-HD-RRT*former
 
 ## Requirements
 
@@ -23,6 +22,11 @@ The demonstration script provides a simple interface to run the pre-trained mode
 
 ### 2. Dataset Generation
 
+Dataset can be downloaded from the following link:
+[Download Dataset](https://drive.google.com/file/d/1yDZS8oNZJiot6dbN7IJVbqbZBpjgNW9E/view?usp=drive_link)
+
+Unzip the downloaded dataset file and place it in the `data/` directory.
+
 ```bash
 python dataset_generation.py
 ```
@@ -35,6 +39,8 @@ The dataset includes:
 - Environment maps
 
 ### 3. Model Training
+
+You can find the pre-trained model checkpoint in the `ckpt/` directory.
 
 ```bash
 python train.py
