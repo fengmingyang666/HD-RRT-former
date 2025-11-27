@@ -1,0 +1,6 @@
+data/*
+ckpt/*
+res/*
+wandb
+.history
+__pycache__
