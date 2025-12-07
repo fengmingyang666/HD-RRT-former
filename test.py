@@ -805,15 +805,16 @@ def test_planner(seed=42,method='rrt_connect',model_path=None, episode=100, alph
     logging.info(f"alpha: {alpha}")
     logging.info(f'model: {model_path}')
     logging.info(f"Valid episode: {valid_episode}")
-    logging.info(f"Average path length: {sum(path_length)/valid_episode:.2f}")
-    logging.info(f"Average expanded nodes: {sum(expanded_nodes)/valid_episode:.2f}")
-    logging.info(f"Average path nodes: {sum(path_nodes)/valid_episode:.2f}")
-    logging.info(f"Average iters: {sum(iters)/valid_episode:.2f}")
-    logging.info(f"Average time: {sum(times)/valid_episode:.2f}")
-    logging.info(f"Average acceleration: {sum(accelerate)/valid_episode:.2f}")
-    logging.info(f"Average jerk: {sum(jerk)/valid_episode:.2f}")
-    logging.info(f"Average energy: {sum(energy_func)/valid_episode:.2f}")
-    logging.info(f"Average curvature: {sum(curvature)/valid_episode:.2f}")
+
+    logging.info(f"Average path length: {np.mean(path_length):.2f} ± {np.std(path_length):.2f}")
+    logging.info(f"Average expanded nodes: {np.mean(expanded_nodes):.2f} ± {np.std(expanded_nodes):.2f}")
+    logging.info(f"Average path nodes: {np.mean(path_nodes):.2f} ± {np.std(path_nodes):.2f}")
+    logging.info(f"Average iters: {np.mean(iters):.2f} ± {np.std(iters):.2f}")
+    logging.info(f"Average time: {np.mean(times):.2f} ± {np.std(times):.2f}")
+    logging.info(f"Average acceleration: {np.mean(accelerate):.2f} ± {np.std(accelerate):.2f}")
+    logging.info(f"Average jerk: {np.mean(jerk):.2f} ± {np.std(jerk):.2f}")
+    logging.info(f"Average energy: {np.mean(energy_func):.2f} ± {np.std(energy_func):.2f}")
+    logging.info(f"Average curvature: {np.mean(curvature):.2f} ± {np.std(curvature):.2f}")
     
     return {'valid_episode':valid_episode, 'path_length':path_length, 'expanded_nodes':expanded_nodes, 'path_nodes':path_nodes, 'iters':iters, 'times':times, 'accelerate':accelerate, 'jerk':jerk, 'energy_func':energy_func, 'curvature':curvature}
 
